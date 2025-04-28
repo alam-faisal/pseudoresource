@@ -1,0 +1,39 @@
+experiments:
+- chi: 14
+  num_sites: 4
+  run_type: periodic
+- chi: 14
+  num_sites: 6
+  run_type: periodic
+- chi: 14
+  num_sites: 8
+  run_type: periodic
+- chi: 14
+  num_sites: 10
+  run_type: periodic
+- chi: 14
+  num_sites: 12
+  run_type: periodic
+- chi: 14
+  num_sites: 14
+  run_type: periodic
+- chi: 14
+  num_sites: 16
+  run_type: periodic
+- chi: 14
+  num_sites: 18
+  run_type: periodic
+- chi: 14
+  num_sites: 20
+  run_type: periodic
+- chi: 14
+  num_sites: 22
+  run_type: periodic
+- chi: 14
+  num_sites: 24
+  run_type: periodic
+- chi: 14
+  num_sites: 26
+  run_type: periodic
+param: 1.0
+resume: false

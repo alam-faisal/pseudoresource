@@ -1,0 +1,36 @@
+experiments:
+- chi: 16
+  num_sites: 28
+  run_type: periodic
+- chi: 16
+  num_sites: 30
+  run_type: periodic
+- chi: 16
+  num_sites: 32
+  run_type: periodic
+- chi: 16
+  num_sites: 34
+  run_type: periodic
+- chi: 16
+  num_sites: 36
+  run_type: periodic
+- chi: 16
+  num_sites: 38
+  run_type: periodic
+- chi: 16
+  num_sites: 40
+  run_type: periodic
+- chi: 16
+  num_sites: 42
+  run_type: periodic
+- chi: 16
+  num_sites: 44
+  run_type: periodic
+- chi: 16
+  num_sites: 46
+  run_type: periodic
+- chi: 16
+  num_sites: 48
+  run_type: periodic
+param: 1.0
+resume: false
