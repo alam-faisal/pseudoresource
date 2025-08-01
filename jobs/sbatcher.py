@@ -1,13 +1,15 @@
-yaml_files = ["job4_22_0.yml", "job4_22_1.yml", "job4_22_2.yml", "job4_22_3.yml", 
-              "job4_22_4.yml", "job4_22_5.yml", "job4_22_6.yml", 
-              "job4_22_7.yml", "job4_22_8.yml", "job4_22_9.yml", 
-              "job4_22_10.yml", "job4_22_11.yml",]
-
 import os
-CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-run_experiment = os.path.join(CURRENT_DIR, "run_experiment.py")
 
-def submit_sbatch(job_name, command):
+yaml_files = [
+    "cjob06_17_00", "cjob06_17_01", "cjob06_17_02", "cjob06_17_03",
+    "cjob06_17_04", "cjob06_17_05", "cjob06_17_06", 
+]
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+CONFIG_DIR = os.path.join(CURRENT_DIR, "configs")
+run_experiment = os.path.join(CURRENT_DIR, "run_experiment_parallel.py")
+
+def submit_sbatch(job_name, command, yaml_file):
     sbatch_file = f"{job_name}.sbatch"
     log_file = f"{job_name}"
 
@@ -27,9 +29,9 @@ def submit_sbatch(job_name, command):
     os.system(f"sbatch {sbatch_file}")
     print(f"Submitted job '{job_name}' using YAML: {yaml_file}")
 
-
 for yaml_file in yaml_files:
-    job_name = os.path.splitext(os.path.basename(yaml_file))[0]
-    yaml_path = os.path.join(CURRENT_DIR, yaml_file)
+    yaml_filename = f"{yaml_file}.yml"
+    job_name = yaml_file
+    yaml_path = os.path.join(CONFIG_DIR, yaml_filename)
     command = f"python {run_experiment} {yaml_path}"
-    submit_sbatch(job_name, command)
+    submit_sbatch(job_name, command, yaml_filename)
