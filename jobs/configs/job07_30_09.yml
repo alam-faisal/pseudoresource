@@ -1,0 +1,7 @@
+experiments:
+- chi: 16
+  num_sites: 14
+  run_type: periodic
+max_iter: 1000000.0
+param: 1.0
+resume: true
